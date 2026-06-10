@@ -1,0 +1,1442 @@
+<!DOCTYPE html>
+
+<html lang="fr" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cahier de Grammaire Arabe — Niveau Médine Tome 1</title>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Noto+Naskh+Arabic:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1a2e;
+    --gold: #c9a84c;
+    --gold-light: #f0dfa0;
+    --parchment: #faf7f0;
+    --parchment-dark: #f0ead8;
+    --green: #2d6a4f;
+    --green-light: #d8f3dc;
+    --blue: #1b4f72;
+    --blue-light: #d6eaf8;
+    --red: #922b21;
+    --red-light: #fdecea;
+    --purple: #5b2c6f;
+    --purple-light: #e8daef;
+    --border: #d4b896;
+    --shadow: rgba(26,26,46,0.08);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: #e8e0d0;
+    font-family: 'Inter', sans-serif;
+    color: var(--ink);
+    line-height: 1.6;
+  }
+  .cover {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    color: white;
+    text-align: center;
+    padding: 60px 40px 50px;
+    position: relative;
+    overflow: hidden;
+  }
+  .cover::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23c9a84c' fill-opacity='0.06'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    opacity: 1;
+  }
+  .cover-ornament {
+    font-family: 'Amiri', serif;
+    font-size: 2.8rem;
+    color: var(--gold);
+    letter-spacing: 0.05em;
+    margin-bottom: 8px;
+    position: relative;
+  }
+  .cover h1 {
+    font-family: 'Amiri', serif;
+    font-size: 1.9rem;
+    color: white;
+    margin-bottom: 6px;
+    position: relative;
+  }
+  .cover h2 {
+    font-size: 0.95rem;
+    font-weight: 300;
+    color: var(--gold-light);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    position: relative;
+  }
+  .cover-divider {
+    width: 120px; height: 2px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    margin: 18px auto;
+    position: relative;
+  }
+  .cover-badge {
+    display: inline-block;
+    border: 1px solid var(--gold);
+    color: var(--gold-light);
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    padding: 4px 16px;
+    margin-top: 16px;
+    position: relative;
+  }
+
+.container { max-width: 860px; margin: 0 auto; padding: 0 16px 60px; }
+
+.toc {
+background: var(–parchment);
+border: 1px solid var(–border);
+border-top: 4px solid var(–gold);
+padding: 28px 32px;
+margin: 28px 0;
+}
+.toc h3 { font-family: ‘Amiri’, serif; font-size: 1.2rem; color: var(–blue); margin-bottom: 14px; }
+.toc ol { padding-left: 20px; }
+.toc li { margin: 5px 0; font-size: 0.92rem; color: var(–ink); }
+.toc li a { color: var(–blue); text-decoration: none; }
+.toc li a:hover { text-decoration: underline; }
+
+/* Section headers */
+.section {
+background: var(–parchment);
+border: 1px solid var(–border);
+margin: 28px 0 20px;
+overflow: hidden;
+}
+.section-header {
+background: linear-gradient(90deg, var(–ink), #2c3e50);
+color: white;
+padding: 14px 24px;
+display: flex;
+align-items: center;
+gap: 14px;
+}
+.section-num {
+background: var(–gold);
+color: var(–ink);
+font-weight: 700;
+font-size: 0.8rem;
+width: 28px; height: 28px;
+display: flex; align-items: center; justify-content: center;
+flex-shrink: 0;
+}
+.section-header h2 {
+font-family: ‘Amiri’, serif;
+font-size: 1.25rem;
+font-weight: 400;
+}
+.section-header .arabic-title {
+font-family: ‘Noto Naskh Arabic’, serif;
+font-size: 1.1rem;
+color: var(–gold-light);
+margin-left: auto;
+}
+.section-body { padding: 24px; }
+
+/* Rule boxes */
+.rule-box {
+border-left: 4px solid var(–gold);
+background: var(–parchment-dark);
+padding: 14px 18px;
+margin: 16px 0;
+}
+.rule-box.blue { border-color: var(–blue); background: var(–blue-light); }
+.rule-box.green { border-color: var(–green); background: var(–green-light); }
+.rule-box.red { border-color: var(–red); background: var(–red-light); }
+.rule-box.purple { border-color: var(–purple); background: var(–purple-light); }
+.rule-title {
+font-size: 0.72rem;
+font-weight: 600;
+letter-spacing: 0.1em;
+text-transform: uppercase;
+color: var(–gold);
+margin-bottom: 6px;
+}
+.rule-box.blue .rule-title { color: var(–blue); }
+.rule-box.green .rule-title { color: var(–green); }
+.rule-box.red .rule-title { color: var(–red); }
+.rule-box.purple .rule-title { color: var(–purple); }
+
+/* Arabic text */
+.ar {
+font-family: ‘Noto Naskh Arabic’, ‘Amiri’, serif;
+direction: rtl;
+unicode-bidi: embed;
+font-size: 1.35rem;
+line-height: 2.2;
+}
+.ar-inline {
+font-family: ‘Noto Naskh Arabic’, ‘Amiri’, serif;
+direction: rtl;
+unicode-bidi: embed;
+font-size: 1.15rem;
+}
+.ar-large {
+font-family: ‘Noto Naskh Arabic’, ‘Amiri’, serif;
+direction: rtl;
+unicode-bidi: embed;
+font-size: 1.6rem;
+line-height: 2.4;
+}
+
+/* Tables */
+table { width: 100%; border-collapse: collapse; margin: 14px 0; }
+th { background: var(–ink); color: white; padding: 10px 14px; font-size: 0.82rem; font-weight: 500; text-align: center; }
+td { padding: 10px 14px; border: 1px solid var(–border); text-align: center; font-size: 0.92rem; vertical-align: middle; }
+tr:nth-child(even) td { background: var(–parchment-dark); }
+.td-ar { font-family: ‘Noto Naskh Arabic’, serif; font-size: 1.2rem; direction: rtl; line-height: 2; }
+.td-highlight { background: var(–gold-light) !important; font-weight: 600; }
+
+/* Exercise blocks */
+.exercise {
+background: white;
+border: 1px solid var(–border);
+border-top: 3px solid var(–blue);
+margin: 16px 0;
+padding: 18px 20px;
+}
+.exercise.green { border-top-color: var(–green); }
+.exercise.red { border-top-color: var(–red); }
+.exercise.purple { border-top-color: var(–purple); }
+.exercise.gold { border-top-color: var(–gold); }
+.exercise-label {
+font-size: 0.7rem;
+font-weight: 600;
+letter-spacing: 0.12em;
+text-transform: uppercase;
+color: var(–blue);
+margin-bottom: 8px;
+}
+.exercise.green .exercise-label { color: var(–green); }
+.exercise.red .exercise-label { color: var(–red); }
+.exercise.purple .exercise-label { color: var(–purple); }
+.exercise.gold .exercise-label { color: #8a6d00; }
+.exercise h4 { font-size: 1rem; margin-bottom: 10px; }
+
+/* Numbered lists for exercises */
+.ex-list { list-style: none; padding: 0; }
+.ex-list li {
+display: flex; align-items: baseline; gap: 10px;
+padding: 7px 0;
+border-bottom: 1px dashed #ddd;
+font-size: 0.93rem;
+}
+.ex-list li:last-child { border-bottom: none; }
+.ex-num {
+color: var(–gold);
+font-weight: 700;
+font-size: 0.85rem;
+min-width: 22px;
+}
+.ex-fr { flex: 1; }
+.ex-ar {
+font-family: ‘Noto Naskh Arabic’, serif;
+font-size: 1.2rem;
+direction: rtl;
+text-align: right;
+min-width: 200px;
+color: var(–blue);
+}
+.ex-blank {
+border-bottom: 1px solid #aaa;
+min-width: 160px;
+display: inline-block;
+height: 1.2em;
+}
+
+/* Step-by-step translation */
+.translation-block {
+background: var(–parchment);
+border: 1px solid var(–border);
+padding: 18px;
+margin: 12px 0;
+}
+.trans-fr {
+font-size: 1rem;
+font-weight: 600;
+color: var(–ink);
+margin-bottom: 12px;
+padding-bottom: 8px;
+border-bottom: 1px solid var(–border);
+}
+.trans-step {
+display: flex;
+gap: 10px;
+margin: 7px 0;
+font-size: 0.88rem;
+align-items: flex-start;
+}
+.step-icon {
+background: var(–blue);
+color: white;
+font-size: 0.7rem;
+font-weight: 700;
+padding: 2px 7px;
+flex-shrink: 0;
+margin-top: 2px;
+}
+.step-icon.green { background: var(–green); }
+.step-icon.red { background: var(–red); }
+.step-icon.gold { background: var(–gold); color: var(–ink); }
+.step-content { flex: 1; }
+.trans-result {
+background: linear-gradient(90deg, #1b4f72, #0f3460);
+color: white;
+padding: 10px 16px;
+margin-top: 10px;
+text-align: right;
+direction: rtl;
+font-family: ‘Noto Naskh Arabic’, serif;
+font-size: 1.45rem;
+line-height: 2;
+}
+
+/* Conjugation table special */
+.conj-table th { background: var(–blue); }
+.conj-table tr:nth-child(even) td { background: var(–blue-light); }
+.pronoun-col { font-family: ‘Noto Naskh Arabic’, serif; font-size: 1.1rem; direction: rtl; }
+.verb-past { color: var(–red); font-family: ‘Noto Naskh Arabic’, serif; font-size: 1.2rem; direction: rtl; }
+.verb-present { color: var(–green); font-family: ‘Noto Naskh Arabic’, serif; font-size: 1.2rem; direction: rtl; }
+.verb-ending { color: var(–gold); font-weight: 700; }
+
+/* Case system table */
+.case-table th { background: var(–purple); }
+.case-table tr:nth-child(even) td { background: var(–purple-light); }
+
+/* Text analysis */
+.analysis-text {
+background: linear-gradient(135deg, #1a1a2e, #162032);
+color: white;
+padding: 22px 24px;
+direction: rtl;
+font-family: ‘Noto Naskh Arabic’, serif;
+font-size: 1.4rem;
+line-height: 2.6;
+margin: 14px 0;
+border-left: 4px solid var(–gold);
+}
+.analysis-word {
+cursor: help;
+border-bottom: 2px solid;
+padding: 0 2px;
+}
+.aw-mubtada { border-color: #e74c3c; color: #ff9999; }
+.aw-khabar { border-color: #3498db; color: #99ccff; }
+.aw-fail { border-color: #2ecc71; color: #99ffcc; }
+.aw-mafoul { border-color: #f39c12; color: #ffdd99; }
+.aw-jar { border-color: #9b59b6; color: #cc99ff; }
+.aw-verb { border-color: #1abc9c; color: #99ffee; }
+
+.analysis-legend {
+display: flex; flex-wrap: wrap; gap: 10px;
+margin: 10px 0;
+}
+.legend-item {
+display: flex; align-items: center; gap: 5px;
+font-size: 0.8rem;
+}
+.legend-dot {
+width: 12px; height: 12px;
+border-radius: 2px;
+}
+
+.analysis-grid {
+display: grid;
+grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+gap: 10px;
+margin: 14px 0;
+}
+.analysis-card {
+background: var(–parchment-dark);
+border: 1px solid var(–border);
+padding: 12px;
+}
+.ac-word {
+font-family: ‘Noto Naskh Arabic’, serif;
+font-size: 1.3rem;
+direction: rtl;
+margin-bottom: 6px;
+font-weight: 600;
+}
+.ac-label { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; }
+.ac-desc { font-size: 0.85rem; margin-top: 4px; }
+.ac-case { font-size: 0.78rem; color: #666; margin-top: 3px; }
+
+/* tip box */
+.tip {
+background: #fffbeb;
+border: 1px solid #f0d060;
+border-left: 4px solid var(–gold);
+padding: 10px 14px;
+margin: 10px 0;
+font-size: 0.88rem;
+}
+.tip strong { color: #8a6d00; }
+
+/* divider */
+.divider {
+text-align: center;
+color: var(–gold);
+font-size: 1.2rem;
+margin: 20px 0;
+letter-spacing: 0.5em;
+}
+
+p { margin: 8px 0; font-size: 0.93rem; }
+strong { color: var(–ink); }
+code {
+font-family: ‘Noto Naskh Arabic’, serif;
+background: var(–parchment-dark);
+border: 1px solid var(–border);
+padding: 1px 6px;
+font-size: 1.1rem;
+direction: rtl;
+unicode-bidi: embed;
+}
+
+@media (max-width: 600px) {
+.section-header .arabic-title { display: none; }
+.ex-ar { min-width: 120px; font-size: 1rem; }
+.analysis-grid { grid-template-columns: 1fr; }
+.trans-result { font-size: 1.2rem; }
+}
+</style>
+
+</head>
+<body>
+
+<div class="cover">
+  <div class="cover-ornament">بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيمِ</div>
+  <div class="cover-divider"></div>
+  <h1>Cahier de Grammaire Arabe</h1>
+  <h2>Niveau Médine — Tome 1</h2>
+  <div class="cover-badge">Exercices · Règles · Traductions · Analyses</div>
+</div>
+
+<div class="container">
+
+  <div class="toc">
+    <h3>📖 Sommaire</h3>
+    <ol>
+      <li><a href="#s1">Les cas grammaticaux : Raf', Nasb, Jarr (nominatif, accusatif, génitif)</a></li>
+      <li><a href="#s2">La phrase nominale (الجملة الاسمية) — Mubtada' & Khabar</a></li>
+      <li><a href="#s3">La phrase verbale (الجملة الفعلية) — Fa'il & Maf'ul</a></li>
+      <li><a href="#s4">La conjugaison au passé et au présent — Verbe de référence كَتَبَ</a></li>
+      <li><a href="#s5">Les pronoms possessifs (الإضافة)</a></li>
+      <li><a href="#s6">Le na't (النعت) — adjectif qualificatif</a></li>
+      <li><a href="#s7">Exercices structurés</a></li>
+      <li><a href="#s8">20 phrases à traduire — pas à pas</a></li>
+      <li><a href="#s9">Texte avec analyse grammaticale complète</a></li>
+    </ol>
+  </div>
+
+  <!-- ================================ SECTION 1 ================================ -->
+
+  <div class="section" id="s1">
+    <div class="section-header">
+      <div class="section-num">1</div>
+      <h2>Les Cas Grammaticaux — الإعراب</h2>
+      <span class="arabic-title">الرَّفْعُ • النَّصْبُ • الجَرُّ</span>
+    </div>
+    <div class="section-body">
+
+```
+  <p>En arabe, la <strong>terminaison d'un mot change</strong> selon sa fonction dans la phrase. C'est ce qu'on appelle l'<em>i'rab</em> (الإعراب). Il y a 3 cas principaux :</p>
+
+  <table class="case-table">
+    <tr>
+      <th>Cas</th>
+      <th>Nom arabe</th>
+      <th>Voyelle finale (indéfini)</th>
+      <th>Voyelle finale (défini)</th>
+      <th>Rôle principal</th>
+    </tr>
+    <tr>
+      <td><strong>Nominatif</strong></td>
+      <td class="td-ar">رَفْع</td>
+      <td class="td-ar td-highlight">ـٌ (tanwin damm)</td>
+      <td class="td-ar td-highlight">ـُ (damm)</td>
+      <td>Sujet (mubtada', fa'il)</td>
+    </tr>
+    <tr>
+      <td><strong>Accusatif</strong></td>
+      <td class="td-ar">نَصْب</td>
+      <td class="td-ar td-highlight">ـً (tanwin fath)</td>
+      <td class="td-ar td-highlight">ـَ (fatha)</td>
+      <td>Complément d'objet, khabar de kana</td>
+    </tr>
+    <tr>
+      <td><strong>Génitif</strong></td>
+      <td class="td-ar">جَرّ</td>
+      <td class="td-ar td-highlight">ـٍ (tanwin kasr)</td>
+      <td class="td-ar td-highlight">ـِ (kasra)</td>
+      <td>Après préposition, 2e mot d'une idafa</td>
+    </tr>
+  </table>
+
+  <div class="rule-box blue">
+    <div class="rule-title">⚙️ Règle essentielle — Accord du na't</div>
+    <p>L'adjectif (<em>na't</em>) s'accorde en genre, en nombre, en définitude <strong>ET en cas</strong> avec le nom qu'il qualifie. Si le nom est au génitif, le na't l'est aussi.</p>
+  </div>
+
+  <div class="rule-box green">
+    <div class="rule-title">📌 Exemple concret</div>
+    <div class="ar" style="text-align:right; padding: 8px 0;">
+‎      جَاءَ الطَّالِبُ الْمُجْتَهِدُ ← sujet = رفع → ـُ<br>
+‎      رَأَيْتُ الطَّالِبَ الْمُجْتَهِدَ ← COD = نصب → ـَ<br>
+‎      سَلَّمْتُ عَلَى الطَّالِبِ الْمُجْتَهِدِ ← après prép. = جرّ → ـِ
+    </div>
+    <p>Le même mot <strong>طالب</strong> change de terminaison selon sa position.</p>
+  </div>
+
+  <div class="tip">
+    <strong>💡 Astuce mnémotechnique :</strong> Pensez à "U — A — I" (damm → fatha → kasra) comme un escalier qui descend : sujet → objet → après préposition.
+  </div>
+
+</div>
+```
+
+  </div>
+
+  <!-- ================================ SECTION 2 ================================ -->
+
+  <div class="section" id="s2">
+    <div class="section-header">
+      <div class="section-num">2</div>
+      <h2>La Phrase Nominale — الجملة الاسمية</h2>
+      <span class="arabic-title">المُبْتَدَأ وَ الخَبَر</span>
+    </div>
+    <div class="section-body">
+
+```
+  <div class="rule-box">
+    <div class="rule-title">📐 Structure</div>
+    <p><strong>Mubtada' (مبتدأ)</strong> = sujet nominal, toujours au <strong>nominatif (ـُ / ـٌ)</strong><br>
+    <strong>Khabar (خبر)</strong> = prédicat (ce qu'on dit du sujet), toujours au <strong>nominatif (ـُ / ـٌ)</strong><br>
+    Pas de verbe "être" au présent en arabe !</p>
+  </div>
+
+  <p>Le khabar peut être :</p>
+  <ul style="padding-left: 20px; margin: 10px 0; font-size: 0.92rem; line-height: 2;">
+    <li><strong>Un nom :</strong> <span class="ar-inline">مُحَمَّدٌ طَالِبٌ</span> — Muhammad est un étudiant</li>
+    <li><strong>Un adjectif :</strong> <span class="ar-inline">الْبَيْتُ كَبِيرٌ</span> — La maison est grande</li>
+    <li><strong>Un syntagme prépositionnel :</strong> <span class="ar-inline">الْكِتَابُ عَلَى الطَّاوِلَةِ</span> — Le livre est sur la table</li>
+    <li><strong>Une phrase verbale :</strong> <span class="ar-inline">الطَّالِبُ يَدْرُسُ</span> — L'étudiant étudie</li>
+  </ul>
+
+  <div class="rule-box green">
+    <div class="rule-title">🔑 Règle d'accord Mubtada'/Khabar</div>
+    <p>Si le mubtada' est <strong>défini</strong> (avec ال), le khabar est généralement <strong>indéfini</strong> (tanwin) pour éviter une phrase équivoque.<br>
+    <span class="ar-inline">الْوَلَدُ كَرِيمٌ</span> ✓ — mais <span class="ar-inline">الْوَلَدُ الْكَرِيمُ</span> = syntagme nominal (pas une phrase).</p>
+  </div>
+
+</div>
+```
+
+  </div>
+
+  <!-- ================================ SECTION 3 ================================ -->
+
+  <div class="section" id="s3">
+    <div class="section-header">
+      <div class="section-num">3</div>
+      <h2>La Phrase Verbale — الجملة الفعلية</h2>
+      <span class="arabic-title">الفِعْلُ • الفَاعِلُ • المَفْعُولُ بِهِ</span>
+    </div>
+    <div class="section-body">
+
+```
+  <div class="rule-box blue">
+    <div class="rule-title">📐 Structure</div>
+    <p><strong>Ordre de base :</strong> Verbe → Sujet (fa'il) → Complément (maf'ul)<br>
+    <span class="ar-inline">فِعْلٌ + فَاعِلٌ + مَفْعُولٌ بِهِ</span></p>
+  </div>
+
+  <table>
+    <tr>
+      <th>Élément</th>
+      <th>Nom arabe</th>
+      <th>Cas / Voyelle</th>
+      <th>Exemple</th>
+    </tr>
+    <tr>
+      <td>Verbe</td>
+      <td class="td-ar">فِعْل</td>
+      <td>—</td>
+      <td class="td-ar">كَتَبَ</td>
+    </tr>
+    <tr>
+      <td>Sujet (agent)</td>
+      <td class="td-ar">فَاعِل</td>
+      <td class="td-highlight">رفع → ـُ / ـٌ</td>
+      <td class="td-ar">الطَّالِبُ</td>
+    </tr>
+    <tr>
+      <td>COD</td>
+      <td class="td-ar">مَفْعُول بِهِ</td>
+      <td class="td-highlight">نصب → ـَ / ـً</td>
+      <td class="td-ar">الدَّرْسَ</td>
+    </tr>
+  </table>
+
+  <div class="rule-box">
+    <div class="rule-title">⚠️ Accord du verbe en genre</div>
+    <p>Quand la phrase verbale commence par le verbe, celui-ci s'accorde uniquement en <strong>genre</strong> (pas en nombre) avec le sujet :<br>
+    <span class="ar-inline">كَتَبَ الطُّلَّابُ</span> (les étudiants ont écrit — verbe au singulier masculin)<br>
+    <span class="ar-inline">كَتَبَتِ الطَّالِبَاتُ</span> (les étudiantes ont écrit — verbe au singulier féminin)</p>
+  </div>
+
+  <div class="rule-box green">
+    <div class="rule-title">✅ Exemple complet</div>
+    <div class="ar" style="text-align: right; padding: 8px 0;">
+‎      كَتَبَ الأُسْتَاذُ الدَّرْسَ عَلَى السَّبُّورَةِ
+    </div>
+    <p><span class="ar-inline">كَتَبَ</span> = il a écrit (verbe, passé) | <span class="ar-inline">الأُسْتَاذُ</span> = le professeur (fa'il, رفع) | <span class="ar-inline">الدَّرْسَ</span> = la leçon (maf'ul, نصب) | <span class="ar-inline">عَلَى السَّبُّورَةِ</span> = sur le tableau (prép. + nom جرّ)</p>
+  </div>
+
+</div>
+```
+
+  </div>
+
+  <!-- ================================ SECTION 4 ================================ -->
+
+  <div class="section" id="s4">
+    <div class="section-header">
+      <div class="section-num">4</div>
+      <h2>La Conjugaison — Passé et Présent</h2>
+      <span class="arabic-title">الماضي وَ المضارع — كَتَبَ</span>
+    </div>
+    <div class="section-body">
+
+```
+  <div class="rule-box blue">
+    <div class="rule-title">🔤 Verbe de référence : كَتَبَ (kataba) — il a écrit</div>
+    <p>La racine est <strong>ك-ت-ب</strong>. Le schème du passé est <strong>فَعَلَ</strong>. Le schème du présent est <strong>يَفْعُلُ</strong>.</p>
+  </div>
+
+  <p style="margin: 14px 0 6px;"><strong>AU PASSÉ (الماضي) :</strong> on ajoute des <em>suffixes</em> à la racine de base <code>كَتَبَ</code></p>
+
+  <table class="conj-table">
+    <tr>
+      <th>Pronom</th>
+      <th>Traduction</th>
+      <th>Passé (ماضي)</th>
+      <th>Suffixe ajouté</th>
+    </tr>
+    <tr>
+      <td class="pronoun-col">هُوَ</td>
+      <td>il</td>
+      <td class="verb-past">كَتَبَ</td>
+      <td>— (base)</td>
+    </tr>
+    <tr>
+      <td class="pronoun-col">هِيَ</td>
+      <td>elle</td>
+      <td class="verb-past">كَتَبَتْ</td>
+      <td><span class="verb-ending">ـَتْ</span></td>
+    </tr>
+    <tr>
+      <td class="pronoun-col">هُمَا (m)</td>
+      <td>ils deux (m)</td>
+      <td class="verb-past">كَتَبَا</td>
+      <td><span class="verb-ending">ـَا</span></td>
+    </tr>
+    <tr>
+      <td class="pronoun-col">هُمَا (f)</td>
+      <td>elles deux</td>
+      <td class="verb-past">كَتَبَتَا</td>
+      <td><span class="verb-ending">ـَتَا</span></td>
+    </tr>
+    <tr>
+      <td class="pronoun-col">هُمْ</td>
+      <td>ils</td>
+      <td class="verb-past">كَتَبُوا</td>
+      <td><span class="verb-ending">ـُوا</span></td>
+    </tr>
+    <tr>
+      <td class="pronoun-col">هُنَّ</td>
+      <td>elles</td>
+      <td class="verb-past">كَتَبْنَ</td>
+      <td><span class="verb-ending">ـْنَ</span></td>
+    </tr>
+    <tr>
+      <td class="pronoun-col">أَنْتَ</td>
+      <td>tu (m)</td>
+      <td class="verb-past">كَتَبْتَ</td>
+      <td><span class="verb-ending">ـْتَ</span></td>
+    </tr>
+    <tr>
+      <td class="pronoun-col">أَنْتِ</td>
+      <td>tu (f)</td>
+      <td class="verb-past">كَتَبْتِ</td>
+      <td><span class="verb-ending">ـْتِ</span></td>
+    </tr>
+    <tr>
+      <td class="pronoun-col">أَنْتُمَا</td>
+      <td>vous deux</td>
+      <td class="verb-past">كَتَبْتُمَا</td>
+      <td><span class="verb-ending">ـْتُمَا</span></td>
+    </tr>
+    <tr>
+      <td class="pronoun-col">أَنْتُمْ</td>
+      <td>vous (m)</td>
+      <td class="verb-past">كَتَبْتُمْ</td>
+      <td><span class="verb-ending">ـْتُمْ</span></td>
+    </tr>
+    <tr>
+      <td class="pronoun-col">أَنْتُنَّ</td>
+      <td>vous (f)</td>
+      <td class="verb-past">كَتَبْتُنَّ</td>
+      <td><span class="verb-ending">ـْتُنَّ</span></td>
+    </tr>
+    <tr>
+      <td class="pronoun-col">أَنَا</td>
+      <td>je</td>
+      <td class="verb-past">كَتَبْتُ</td>
+      <td><span class="verb-ending">ـْتُ</span></td>
+    </tr>
+    <tr>
+      <td class="pronoun-col">نَحْنُ</td>
+      <td>nous</td>
+      <td class="verb-past">كَتَبْنَا</td>
+      <td><span class="verb-ending">ـْنَا</span></td>
+    </tr>
+  </table>
+
+  <p style="margin: 18px 0 6px;"><strong>AU PRÉSENT (المضارع) :</strong> on ajoute des <em>préfixes</em> + des terminaisons à la racine</p>
+
+  <div class="rule-box purple">
+    <div class="rule-title">🔑 Schème du présent</div>
+    <p>La racine perd la voyelle initiale et reçoit :<br>
+    → un <strong>préfixe</strong> indiquant la personne (يَـ / تَـ / أَـ / نَـ)<br>
+    → une <strong>voyelle sur la 2e radicale</strong> (ici ـُـ pour كتب → يَكْتُبُ)<br>
+    → une <strong>terminaison</strong> indiquant le nombre/genre</p>
+  </div>
+
+  <table class="conj-table">
+    <tr>
+      <th>Pronom</th>
+      <th>Traduction</th>
+      <th>Présent (مضارع)</th>
+      <th>Préfixe + terminaison</th>
+    </tr>
+    <tr>
+      <td class="pronoun-col">هُوَ</td>
+      <td>il</td>
+      <td class="verb-present">يَكْتُبُ</td>
+      <td><span class="verb-ending">يَـ</span> + <span class="verb-ending">ـُ</span></td>
+    </tr>
+    <tr>
+      <td class="pronoun-col">هِيَ</td>
+      <td>elle</td>
+      <td class="verb-present">تَكْتُبُ</td>
+      <td><span class="verb-ending">تَـ</span> + <span class="verb-ending">ـُ</span></td>
+    </tr>
+    <tr>
+      <td class="pronoun-col">هُمَا (m)</td>
+      <td>ils deux</td>
+      <td class="verb-present">يَكْتُبَانِ</td>
+      <td><span class="verb-ending">يَـ</span> + <span class="verb-ending">ـَانِ</span></td>
+    </tr>
+    <tr>
+      <td class="pronoun-col">هُمَا (f)</td>
+      <td>elles deux</td>
+      <td class="verb-present">تَكْتُبَانِ</td>
+      <td><span class="verb-ending">تَـ</span> + <span class="verb-ending">ـَانِ</span></td>
+    </tr>
+    <tr>
+      <td class="pronoun-col">هُمْ</td>
+      <td>ils</td>
+      <td class="verb-present">يَكْتُبُونَ</td>
+      <td><span class="verb-ending">يَـ</span> + <span class="verb-ending">ـُونَ</span></td>
+    </tr>
+    <tr>
+      <td class="pronoun-col">هُنَّ</td>
+      <td>elles</td>
+      <td class="verb-present">يَكْتُبْنَ</td>
+      <td><span class="verb-ending">يَـ</span> + <span class="verb-ending">ـْنَ</span></td>
+    </tr>
+    <tr>
+      <td class="pronoun-col">أَنْتَ</td>
+      <td>tu (m)</td>
+      <td class="verb-present">تَكْتُبُ</td>
+      <td><span class="verb-ending">تَـ</span> + <span class="verb-ending">ـُ</span></td>
+    </tr>
+    <tr>
+      <td class="pronoun-col">أَنْتِ</td>
+      <td>tu (f)</td>
+      <td class="verb-present">تَكْتُبِينَ</td>
+      <td><span class="verb-ending">تَـ</span> + <span class="verb-ending">ـِينَ</span></td>
+    </tr>
+    <tr>
+      <td class="pronoun-col">أَنْتُمَا</td>
+      <td>vous deux</td>
+      <td class="verb-present">تَكْتُبَانِ</td>
+      <td><span class="verb-ending">تَـ</span> + <span class="verb-ending">ـَانِ</span></td>
+    </tr>
+    <tr>
+      <td class="pronoun-col">أَنْتُمْ</td>
+      <td>vous (m)</td>
+      <td class="verb-present">تَكْتُبُونَ</td>
+      <td><span class="verb-ending">تَـ</span> + <span class="verb-ending">ـُونَ</span></td>
+    </tr>
+    <tr>
+      <td class="pronoun-col">أَنْتُنَّ</td>
+      <td>vous (f)</td>
+      <td class="verb-present">تَكْتُبْنَ</td>
+      <td><span class="verb-ending">تَـ</span> + <span class="verb-ending">ـْنَ</span></td>
+    </tr>
+    <tr>
+      <td class="pronoun-col">أَنَا</td>
+      <td>je</td>
+      <td class="verb-present">أَكْتُبُ</td>
+      <td><span class="verb-ending">أَـ</span> + <span class="verb-ending">ـُ</span></td>
+    </tr>
+    <tr>
+      <td class="pronoun-col">نَحْنُ</td>
+      <td>nous</td>
+      <td class="verb-present">نَكْتُبُ</td>
+      <td><span class="verb-ending">نَـ</span> + <span class="verb-ending">ـُ</span></td>
+    </tr>
+  </table>
+
+  <div class="tip">
+    <strong>💡 Mémorisez les 4 préfixes du présent : أ ن ي ت</strong> — "Je–Nous–Il/Ils–Tu/Elle". En arabe : أَنَيْتَ (anaytu) comme moyen mnémotechnique.
+  </div>
+
+</div>
+```
+
+  </div>
+
+  <!-- ================================ SECTION 5 ================================ -->
+
+  <div class="section" id="s5">
+    <div class="section-header">
+      <div class="section-num">5</div>
+      <h2>Les Pronoms Possessifs — الإضافة</h2>
+      <span class="arabic-title">الضَّمَائِرُ المُتَّصِلَة</span>
+    </div>
+    <div class="section-body">
+
+```
+  <div class="rule-box blue">
+    <div class="rule-title">📌 Principe de l'Idafa (الإضافة)</div>
+    <p>Pour exprimer la possession, on utilise soit :<br>
+    1. Un <strong>pronom suffixe</strong> attaché au nom<br>
+    2. Une <strong>construction génitive</strong> : nom au construct + nom au génitif</p>
+    <p style="margin-top: 8px;">Le 1er nom d'une idafa <strong>perd son tanwin</strong> et ne prend <strong>pas de ال</strong>.</p>
+  </div>
+
+  <table>
+    <tr>
+      <th>Personne</th>
+      <th>Suffixe</th>
+      <th>Exemple avec كِتَاب</th>
+      <th>Traduction</th>
+    </tr>
+    <tr>
+      <td>هُوَ (il)</td>
+      <td class="td-ar td-highlight">ـهُ</td>
+      <td class="td-ar">كِتَابُهُ</td>
+      <td>son livre (à lui)</td>
+    </tr>
+    <tr>
+      <td>هِيَ (elle)</td>
+      <td class="td-ar td-highlight">ـهَا</td>
+      <td class="td-ar">كِتَابُهَا</td>
+      <td>son livre (à elle)</td>
+    </tr>
+    <tr>
+      <td>هُمَا (m/f)</td>
+      <td class="td-ar td-highlight">ـهُمَا</td>
+      <td class="td-ar">كِتَابُهُمَا</td>
+      <td>leur livre (à eux deux)</td>
+    </tr>
+    <tr>
+      <td>هُمْ (ils)</td>
+      <td class="td-ar td-highlight">ـهُمْ</td>
+      <td class="td-ar">كِتَابُهُمْ</td>
+      <td>leur livre (à eux)</td>
+    </tr>
+    <tr>
+      <td>هُنَّ (elles)</td>
+      <td class="td-ar td-highlight">ـهُنَّ</td>
+      <td class="td-ar">كِتَابُهُنَّ</td>
+      <td>leur livre (à elles)</td>
+    </tr>
+    <tr>
+      <td>أَنْتَ (tu m)</td>
+      <td class="td-ar td-highlight">ـكَ</td>
+      <td class="td-ar">كِتَابُكَ</td>
+      <td>ton livre</td>
+    </tr>
+    <tr>
+      <td>أَنْتِ (tu f)</td>
+      <td class="td-ar td-highlight">ـكِ</td>
+      <td class="td-ar">كِتَابُكِ</td>
+      <td>ton livre</td>
+    </tr>
+    <tr>
+      <td>أَنْتُمَا</td>
+      <td class="td-ar td-highlight">ـكُمَا</td>
+      <td class="td-ar">كِتَابُكُمَا</td>
+      <td>votre livre (à vous deux)</td>
+    </tr>
+    <tr>
+      <td>أَنْتُمْ (vous m)</td>
+      <td class="td-ar td-highlight">ـكُمْ</td>
+      <td class="td-ar">كِتَابُكُمْ</td>
+      <td>votre livre</td>
+    </tr>
+    <tr>
+      <td>أَنْتُنَّ (vous f)</td>
+      <td class="td-ar td-highlight">ـكُنَّ</td>
+      <td class="td-ar">كِتَابُكُنَّ</td>
+      <td>votre livre</td>
+    </tr>
+    <tr>
+      <td>أَنَا (je)</td>
+      <td class="td-ar td-highlight">ـِي / ـيَ</td>
+      <td class="td-ar">كِتَابِي</td>
+      <td>mon livre</td>
+    </tr>
+    <tr>
+      <td>نَحْنُ (nous)</td>
+      <td class="td-ar td-highlight">ـنَا</td>
+      <td class="td-ar">كِتَابُنَا</td>
+      <td>notre livre</td>
+    </tr>
+  </table>
+
+  <div class="rule-box red">
+    <div class="rule-title">⚠️ Cas particulier : voyelle avant ـِي</div>
+    <p>Quand on ajoute ـِي à un nom au nominatif, la terminaison ـُ devient ـِ :<br>
+    <span class="ar-inline">كِتَابٌ</span> → <span class="ar-inline">كِتَابِي</span> (et non كِتَابُي)<br>
+    La kasra s'impose avant le yaa' de la 1ère personne.</p>
+  </div>
+
+</div>
+```
+
+  </div>
+
+  <!-- ================================ SECTION 6 ================================ -->
+
+  <div class="section" id="s6">
+    <div class="section-header">
+      <div class="section-num">6</div>
+      <h2>Le Na't — النعت (L'Adjectif Qualificatif)</h2>
+      <span class="arabic-title">النَّعْتُ وَ المَنْعُوت</span>
+    </div>
+    <div class="section-body">
+
+```
+  <div class="rule-box">
+    <div class="rule-title">📐 4 accords obligatoires du Na't</div>
+    <p>Le na't (adjectif) s'accorde avec le man'ut (nom) en :</p>
+    <ol style="padding-left: 20px; margin-top: 8px; font-size: 0.92rem; line-height: 2;">
+      <li><strong>Genre</strong> — masculin / féminin</li>
+      <li><strong>Nombre</strong> — singulier / duel / pluriel</li>
+      <li><strong>Définitude</strong> — défini (ال) / indéfini (tanwin)</li>
+      <li><strong>Cas</strong> — رفع / نصب / جرّ</li>
+    </ol>
+  </div>
+
+  <table>
+    <tr>
+      <th>Phrase</th>
+      <th>Na't (adjectif)</th>
+      <th>Accord</th>
+    </tr>
+    <tr>
+      <td class="td-ar">طَالِبٌ مُجْتَهِدٌ</td>
+      <td class="td-ar">مُجْتَهِدٌ</td>
+      <td>masc. sg. indéf. رفع</td>
+    </tr>
+    <tr>
+      <td class="td-ar">طَالِبَةٌ مُجْتَهِدَةٌ</td>
+      <td class="td-ar">مُجْتَهِدَةٌ</td>
+      <td>fém. sg. indéf. رفع</td>
+    </tr>
+    <tr>
+      <td class="td-ar">الطَّالِبُ الْمُجْتَهِدُ</td>
+      <td class="td-ar">الْمُجْتَهِدُ</td>
+      <td>masc. sg. déf. رفع</td>
+    </tr>
+    <tr>
+      <td class="td-ar">الطَّالِبَانِ الْمُجْتَهِدَانِ</td>
+      <td class="td-ar">الْمُجْتَهِدَانِ</td>
+      <td>masc. duel déf. رفع</td>
+    </tr>
+    <tr>
+      <td class="td-ar">طُلَّابٌ مُجْتَهِدُونَ</td>
+      <td class="td-ar">مُجْتَهِدُونَ</td>
+      <td>masc. pl. indéf. رفع</td>
+    </tr>
+    <tr>
+      <td class="td-ar">رَأَيْتُ طَالِبًا مُجْتَهِدًا</td>
+      <td class="td-ar">مُجْتَهِدًا</td>
+      <td>masc. sg. indéf. نصب</td>
+    </tr>
+  </table>
+
+</div>
+```
+
+  </div>
+
+  <!-- ================================ SECTION 7 ================================ -->
+
+  <div class="section" id="s7">
+    <div class="section-header">
+      <div class="section-num">7</div>
+      <h2>Exercices Structurés</h2>
+      <span class="arabic-title">تَمَارِين</span>
+    </div>
+    <div class="section-body">
+
+```
+  <div class="exercise">
+    <div class="exercise-label">Exercice A — Cas grammaticaux</div>
+    <h4>Mets la bonne terminaison (ـُ / ـَ / ـِ) sur le mot entre parenthèses :</h4>
+    <ul class="ex-list">
+      <li><span class="ex-num">1</span><span class="ex-fr">جَاءَ (الطَّالِب) إلى الْفَصْلِ ← fa'il → cas ?</span><span class="ex-ar ex-blank"></span></li>
+      <li><span class="ex-num">2</span><span class="ex-fr">رَأَيْتُ (الأُسْتَاذ) في الْمَسْجِدِ ← maf'ul → cas ?</span><span class="ex-ar ex-blank"></span></li>
+      <li><span class="ex-num">3</span><span class="ex-fr">ذَهَبْتُ إلى (الْبَيْت) الْكَبِيرِ ← après prép. → cas ?</span><span class="ex-ar ex-blank"></span></li>
+      <li><span class="ex-num">4</span><span class="ex-fr">الْكِتَابُ عَلَى (الطَّاوِل) ← dans syntagme prép. → cas ?</span><span class="ex-ar ex-blank"></span></li>
+      <li><span class="ex-num">5</span><span class="ex-fr">قَرَأَ (الْمُعَلِّم) الدَّرْسَ ← fa'il → cas ?</span><span class="ex-ar ex-blank"></span></li>
+      <li><span class="ex-num">6</span><span class="ex-fr">سَمِعْتُ (الأَذَان) مِن الْمَسْجِدِ ← maf'ul → cas ?</span><span class="ex-ar ex-blank"></span></li>
+    </ul>
+    <div class="rule-box green" style="margin-top:14px;">
+      <div class="rule-title">✅ Corrigé</div>
+      <p>1. الطَّالِبُ (رفع) | 2. الأُسْتَاذَ (نصب) | 3. الْبَيْتِ (جرّ) | 4. الطَّاوِلَةِ (جرّ) | 5. الْمُعَلِّمُ (رفع) | 6. الأَذَانَ (نصب)</p>
+    </div>
+  </div>
+
+  <div class="exercise green">
+    <div class="exercise-label">Exercice B — Conjugaison</div>
+    <h4>Conjugue le verbe <span class="ar-inline">ذَهَبَ</span> (aller) — même schème que كَتَبَ — pour les pronoms suivants :</h4>
+    <ul class="ex-list">
+      <li><span class="ex-num">1</span><span class="ex-fr">هِيَ (passé)</span><span class="ex-ar ex-blank"></span></li>
+      <li><span class="ex-num">2</span><span class="ex-fr">أَنَا (passé)</span><span class="ex-ar ex-blank"></span></li>
+      <li><span class="ex-num">3</span><span class="ex-fr">هُمْ (passé)</span><span class="ex-ar ex-blank"></span></li>
+      <li><span class="ex-num">4</span><span class="ex-fr">أَنْتَ (présent)</span><span class="ex-ar ex-blank"></span></li>
+      <li><span class="ex-num">5</span><span class="ex-fr">نَحْنُ (présent)</span><span class="ex-ar ex-blank"></span></li>
+      <li><span class="ex-num">6</span><span class="ex-fr">هِيَ (présent)</span><span class="ex-ar ex-blank"></span></li>
+      <li><span class="ex-num">7</span><span class="ex-fr">هُمَا masc. (présent)</span><span class="ex-ar ex-blank"></span></li>
+      <li><span class="ex-num">8</span><span class="ex-fr">أَنْتُنَّ (passé)</span><span class="ex-ar ex-blank"></span></li>
+    </ul>
+    <div class="rule-box green" style="margin-top:14px;">
+      <div class="rule-title">✅ Corrigé</div>
+      <p>1. ذَهَبَتْ | 2. ذَهَبْتُ | 3. ذَهَبُوا | 4. تَذْهَبُ | 5. نَذْهَبُ | 6. تَذْهَبُ | 7. يَذْهَبَانِ | 8. ذَهَبْتُنَّ</p>
+    </div>
+  </div>
+
+  <div class="exercise red">
+    <div class="exercise-label">Exercice C — Pronoms possessifs</div>
+    <h4>Attache le bon suffixe possessif au mot <span class="ar-inline">بَيْت</span> (maison) :</h4>
+    <ul class="ex-list">
+      <li><span class="ex-num">1</span><span class="ex-fr">ma maison</span><span class="ex-ar ex-blank"></span></li>
+      <li><span class="ex-num">2</span><span class="ex-fr">ta maison (à toi, m)</span><span class="ex-ar ex-blank"></span></li>
+      <li><span class="ex-num">3</span><span class="ex-fr">sa maison (à lui)</span><span class="ex-ar ex-blank"></span></li>
+      <li><span class="ex-num">4</span><span class="ex-fr">sa maison (à elle)</span><span class="ex-ar ex-blank"></span></li>
+      <li><span class="ex-num">5</span><span class="ex-fr">notre maison</span><span class="ex-ar ex-blank"></span></li>
+      <li><span class="ex-num">6</span><span class="ex-fr">votre maison (pluriel m)</span><span class="ex-ar ex-blank"></span></li>
+      <li><span class="ex-num">7</span><span class="ex-fr">leur maison (pluriel m)</span><span class="ex-ar ex-blank"></span></li>
+    </ul>
+    <div class="rule-box red" style="margin-top:14px;">
+      <div class="rule-title">✅ Corrigé</div>
+      <p>1. بَيْتِي | 2. بَيْتُكَ | 3. بَيْتُهُ | 4. بَيْتُهَا | 5. بَيْتُنَا | 6. بَيْتُكُمْ | 7. بَيْتُهُمْ</p>
+    </div>
+  </div>
+
+  <div class="exercise purple">
+    <div class="exercise-label">Exercice D — Na't : Accord de l'adjectif</div>
+    <h4>Accorde l'adjectif <span class="ar-inline">كَبِير</span> avec le nom :</h4>
+    <ul class="ex-list">
+      <li><span class="ex-num">1</span><span class="ex-fr">مَسْجِدٌ ........... (masc. sg. indéf. رفع)</span><span class="ex-ar ex-blank"></span></li>
+      <li><span class="ex-num">2</span><span class="ex-fr">مَدْرَسَةٌ ........... (fém. sg. indéf. رفع)</span><span class="ex-ar ex-blank"></span></li>
+      <li><span class="ex-num">3</span><span class="ex-fr">الْمَسْجِدُ ........... (masc. sg. déf. رفع)</span><span class="ex-ar ex-blank"></span></li>
+      <li><span class="ex-num">4</span><span class="ex-fr">رَأَيْتُ بَيْتًا ........... (masc. sg. indéf. نصب)</span><span class="ex-ar ex-blank"></span></li>
+      <li><span class="ex-num">5</span><span class="ex-fr">ذَهَبْتُ إلى مَدِينَةٍ ........... (fém. sg. indéf. جرّ)</span><span class="ex-ar ex-blank"></span></li>
+      <li><span class="ex-num">6</span><span class="ex-fr">مَسَاجِدُ ........... (masc. pl. indéf. رفع — pluriel brisé = fém. !)</span><span class="ex-ar ex-blank"></span></li>
+    </ul>
+    <div class="rule-box purple" style="margin-top:14px;">
+      <div class="rule-title">✅ Corrigé</div>
+      <p>1. كَبِيرٌ | 2. كَبِيرَةٌ | 3. الْكَبِيرُ | 4. كَبِيرًا | 5. كَبِيرَةٍ | 6. كَبِيرَةٌ (pluriel non-humain → adjectif au féminin singulier !)</p>
+    </div>
+  </div>
+
+  <div class="exercise gold">
+    <div class="exercise-label">Exercice E — Construire des phrases</div>
+    <h4>Construis une phrase nominale puis verbale à partir de ces éléments :</h4>
+    <ul class="ex-list">
+      <li><span class="ex-num">1</span><span class="ex-fr">أُسْتَاذٌ / كَرِيمٌ → Phrase nominale</span><span class="ex-ar ex-blank"></span></li>
+      <li><span class="ex-num">2</span><span class="ex-fr">قَرَأَ / الطَّالِبُ / الْكِتَابَ → Phrase verbale</span><span class="ex-ar ex-blank"></span></li>
+      <li><span class="ex-num">3</span><span class="ex-fr">الْبِنْتُ / مُجْتَهِدَةٌ → Phrase nominale</span><span class="ex-ar ex-blank"></span></li>
+      <li><span class="ex-num">4</span><span class="ex-fr">شَرِبَتْ / الطَّالِبَةُ / الْمَاءَ → Phrase verbale</span><span class="ex-ar ex-blank"></span></li>
+    </ul>
+    <div class="rule-box" style="margin-top:14px;">
+      <div class="rule-title">✅ Corrigé</div>
+      <p>1. الأُسْتَاذُ كَرِيمٌ | 2. قَرَأَ الطَّالِبُ الْكِتَابَ | 3. الْبِنْتُ مُجْتَهِدَةٌ | 4. شَرِبَتِ الطَّالِبَةُ الْمَاءَ</p>
+    </div>
+  </div>
+
+</div>
+```
+
+  </div>
+
+  <!-- ================================ SECTION 8 ================================ -->
+
+  <div class="section" id="s8">
+    <div class="section-header">
+      <div class="section-num">8</div>
+      <h2>20 Phrases à Traduire — Pas à Pas</h2>
+      <span class="arabic-title">تَرْجَمَةٌ مُفَصَّلَة</span>
+    </div>
+    <div class="section-body">
+
+```
+  <p style="margin-bottom: 16px;">Pour chaque phrase, je décompose la structure grammaticale avant de donner le résultat final en arabe.</p>
+
+  <!-- Phrase 1 -->
+  <div class="translation-block">
+    <div class="trans-fr">1. Le professeur est dans sa classe.</div>
+    <div class="trans-step"><span class="step-icon">TYPE</span><span class="step-content"><strong>Phrase nominale</strong> : mubtada' + khabar (syntagme prépositionnel)</span></div>
+    <div class="trans-step"><span class="step-icon blue">SUJET</span><span class="step-content"><span class="ar-inline">الأُسْتَاذُ</span> = le professeur → mubtada' → <strong>رفع → ـُ</strong></span></div>
+    <div class="trans-step"><span class="step-icon green">PRÉP</span><span class="step-content"><span class="ar-inline">فِي</span> = dans → حرف جرّ</span></div>
+    <div class="trans-step"><span class="step-icon gold">POSS</span><span class="step-content">"sa classe" = <span class="ar-inline">فَصْلِهِ</span> — فَصْل (classe) + ـهِ (son, à lui) → après prép. → <strong>جرّ → ـِ</strong></span></div>
+    <div class="trans-result">الأُسْتَاذُ فِي فَصْلِهِ.</div>
+  </div>
+
+  <!-- Phrase 2 -->
+  <div class="translation-block">
+    <div class="trans-fr">2. J'ai écrit la leçon sur le tableau.</div>
+    <div class="trans-step"><span class="step-icon">TYPE</span><span class="step-content"><strong>Phrase verbale</strong> : verbe + fa'il (pronom inclus) + maf'ul</span></div>
+    <div class="trans-step"><span class="step-icon blue">VERBE</span><span class="step-content"><span class="ar-inline">كَتَبْتُ</span> = j'ai écrit (أنا) → suffixe ـْتُ</span></div>
+    <div class="trans-step"><span class="step-icon green">COD</span><span class="step-content"><span class="ar-inline">الدَّرْسَ</span> = la leçon → maf'ul bih → <strong>نصب → ـَ</strong></span></div>
+    <div class="trans-step"><span class="step-icon gold">PRÉP</span><span class="step-content"><span class="ar-inline">عَلَى السَّبُّورَةِ</span> = sur le tableau → عَلَى + السَّبُّورَةِ (جرّ)</span></div>
+    <div class="trans-result">كَتَبْتُ الدَّرْسَ عَلَى السَّبُّورَةِ.</div>
+  </div>
+
+  <!-- Phrase 3 -->
+  <div class="translation-block">
+    <div class="trans-fr">3. Ton livre est grand.</div>
+    <div class="trans-step"><span class="step-icon">TYPE</span><span class="step-content"><strong>Phrase nominale</strong> : mubtada' + khabar adjectif</span></div>
+    <div class="trans-step"><span class="step-icon blue">SUJET</span><span class="step-content"><span class="ar-inline">كِتَابُكَ</span> = ton livre → كِتَاب + ـكَ (suffixe "tu masc.") → mubtada' → رفع → ـُ (sur كتاب)</span></div>
+    <div class="trans-step"><span class="step-icon green">KHABAR</span><span class="step-content"><span class="ar-inline">كَبِيرٌ</span> = grand → khabar → <strong>رفع + indéfini → ـٌ</strong></span></div>
+    <div class="trans-result">كِتَابُكَ كَبِيرٌ.</div>
+  </div>
+
+  <!-- Phrase 4 -->
+  <div class="translation-block">
+    <div class="trans-fr">4. Les étudiantes sont intelligentes.</div>
+    <div class="trans-step"><span class="step-icon">TYPE</span><span class="step-content"><strong>Phrase nominale</strong> au pluriel féminin</span></div>
+    <div class="trans-step"><span class="step-icon blue">SUJET</span><span class="step-content"><span class="ar-inline">الطَّالِبَاتُ</span> = les étudiantes → pl. fém. → mubtada' → <strong>رفع → ـُ</strong></span></div>
+    <div class="trans-step"><span class="step-icon green">KHABAR</span><span class="step-content"><span class="ar-inline">ذَكِيَّاتٌ</span> = intelligentes → pl. fém. indéf. rafa' → <strong>ـٌ</strong> (s'accorde en genre et nombre)</span></div>
+    <div class="trans-result">الطَّالِبَاتُ ذَكِيَّاتٌ.</div>
+  </div>
+
+  <!-- Phrase 5 -->
+  <div class="translation-block">
+    <div class="trans-fr">5. Le messager d'Allah est un bon modèle.</div>
+    <div class="trans-step"><span class="step-icon">TYPE</span><span class="step-content"><strong>Phrase nominale</strong> avec idafa (construction génitive)</span></div>
+    <div class="trans-step"><span class="step-icon blue">SUJET</span><span class="step-content"><span class="ar-inline">رَسُولُ اللهِ</span> = le messager d'Allah → رَسُول (1er nom idafa → رفع → ـُ, sans tanwin) + اللهِ (génitif → ـِ)</span></div>
+    <div class="trans-step"><span class="step-icon green">KHABAR</span><span class="step-content"><span class="ar-inline">أُسْوَةٌ حَسَنَةٌ</span> = un beau modèle → na't حَسَنَةٌ s'accorde (fém. car أُسْوَة est féminin)</span></div>
+    <div class="trans-result">رَسُولُ اللهِ أُسْوَةٌ حَسَنَةٌ.</div>
+  </div>
+
+  <!-- Phrase 6 -->
+  <div class="translation-block">
+    <div class="trans-fr">6. Les musulmans prient dans la grande mosquée.</div>
+    <div class="trans-step"><span class="step-icon">TYPE</span><span class="step-content"><strong>Phrase verbale</strong> : verbe (pl. m.) + fa'il + syntagme prépositionnel</span></div>
+    <div class="trans-step"><span class="step-icon blue">VERBE</span><span class="step-content"><span class="ar-inline">يُصَلِّي</span> → mais fa'il est pluriel masculin humain, donc le verbe reste au singulier en début de phrase : <span class="ar-inline">يُصَلِّي</span></span></div>
+    <div class="trans-step"><span class="step-icon green">FA'IL</span><span class="step-content"><span class="ar-inline">الْمُسْلِمُونَ</span> = les musulmans → pl. masc. déf. → <strong>رفع → ـُونَ</strong></span></div>
+    <div class="trans-step"><span class="step-icon gold">PRÉP</span><span class="step-content"><span class="ar-inline">فِي الْمَسْجِدِ الْكَبِيرِ</span> → الْمَسْجِدِ (جرّ ـِ) + الْكَبِيرِ (na't, déf. جرّ ـِ)</span></div>
+    <div class="trans-result">يُصَلِّي الْمُسْلِمُونَ فِي الْمَسْجِدِ الْكَبِيرِ.</div>
+  </div>
+
+  <!-- Phrase 7 -->
+  <div class="translation-block">
+    <div class="trans-fr">7. Notre maison est devant l'école.</div>
+    <div class="trans-step"><span class="step-icon">TYPE</span><span class="step-content"><strong>Phrase nominale</strong> : mubtada' possessif + khabar adverbe de lieu</span></div>
+    <div class="trans-step"><span class="step-icon blue">SUJET</span><span class="step-content"><span class="ar-inline">بَيْتُنَا</span> = notre maison → بَيْت + نَا → mubtada' → رفع → ـُ</span></div>
+    <div class="trans-step"><span class="step-icon green">KHABAR</span><span class="step-content"><span class="ar-inline">أَمَامَ الْمَدْرَسَةِ</span> = devant l'école → أَمَامَ (adv. lieu) + الْمَدْرَسَةِ (génitif car après une nisbah)</span></div>
+    <div class="trans-result">بَيْتُنَا أَمَامَ الْمَدْرَسَةِ.</div>
+  </div>
+
+  <!-- Phrase 8 -->
+  <div class="translation-block">
+    <div class="trans-fr">8. Tu as ouvert (m) la porte.</div>
+    <div class="trans-step"><span class="step-icon">TYPE</span><span class="step-content"><strong>Phrase verbale</strong> — sujet inclus dans le verbe</span></div>
+    <div class="trans-step"><span class="step-icon blue">VERBE</span><span class="step-content"><span class="ar-inline">فَتَحْتَ</span> = tu as ouvert (أَنْتَ) → فَتَحَ + ـْتَ → passé 2e masc. sg.</span></div>
+    <div class="trans-step"><span class="step-icon green">COD</span><span class="step-content"><span class="ar-inline">الْبَابَ</span> = la porte → maf'ul → <strong>نصب → ـَ</strong></span></div>
+    <div class="trans-result">فَتَحْتَ الْبَابَ.</div>
+  </div>
+
+  <!-- Phrase 9 -->
+  <div class="translation-block">
+    <div class="trans-fr">9. Leur père est un médecin honnête.</div>
+    <div class="trans-step"><span class="step-icon">TYPE</span><span class="step-content"><strong>Phrase nominale</strong> : idafa + khabar avec na't</span></div>
+    <div class="trans-step"><span class="step-icon blue">SUJET</span><span class="step-content"><span class="ar-inline">أَبُوهُمْ</span> = leur père → أَب (irrégulier : أَبُو au nominatif) + هُمْ (suffixe "leur")</span></div>
+    <div class="trans-step"><span class="step-icon green">KHABAR</span><span class="step-content"><span class="ar-inline">طَبِيبٌ أَمِينٌ</span> = un médecin honnête → khabar indéf. رفع + na't accordé</span></div>
+    <div class="trans-result">أَبُوهُمْ طَبِيبٌ أَمِينٌ.</div>
+  </div>
+
+  <!-- Phrase 10 -->
+  <div class="translation-block">
+    <div class="trans-fr">10. Nous étudions la langue arabe chaque jour.</div>
+    <div class="trans-step"><span class="step-icon">TYPE</span><span class="step-content"><strong>Phrase verbale</strong> au présent + COD + complément de temps</span></div>
+    <div class="trans-step"><span class="step-icon blue">VERBE</span><span class="step-content"><span class="ar-inline">نَدْرُسُ</span> = nous étudions → نَـ (préfixe نحن) + درس (racine) + ـُ</span></div>
+    <div class="trans-step"><span class="step-icon green">COD</span><span class="step-content"><span class="ar-inline">اللُّغَةَ الْعَرَبِيَّةَ</span> → اللُّغَةَ (مف., نصب ـَ) + الْعَرَبِيَّةَ (na't, déf. fém. نصب ـَ)</span></div>
+    <div class="trans-step"><span class="step-icon gold">TEMPS</span><span class="step-content"><span class="ar-inline">كُلَّ يَوْمٍ</span> = chaque jour → كُلَّ (نصب, مف. زمان) + يَوْمٍ (جرّ après idafa)</span></div>
+    <div class="trans-result">نَدْرُسُ اللُّغَةَ الْعَرَبِيَّةَ كُلَّ يَوْمٍ.</div>
+  </div>
+
+  <!-- Phrase 11 -->
+  <div class="translation-block">
+    <div class="trans-fr">11. Votre imam est dans la capitale de la France.</div>
+    <div class="trans-step"><span class="step-icon">TYPE</span><span class="step-content"><strong>Phrase nominale</strong> : sujet possessif + khabar prép.</span></div>
+    <div class="trans-step"><span class="step-icon blue">SUJET</span><span class="step-content"><span class="ar-inline">إِمَامُكُمْ</span> = votre imam → إِمَام + كُمْ → mubtada' رفع ـُ</span></div>
+    <div class="trans-step"><span class="step-icon green">KHABAR</span><span class="step-content"><span class="ar-inline">فِي عَاصِمَةِ فَرَنْسَا</span> = dans la capitale de France → idafa : عَاصِمَة (جرّ après في) + فَرَنْسَا (génitif, nom propre invariable)</span></div>
+    <div class="trans-result">إِمَامُكُمْ فِي عَاصِمَةِ فَرَنْسَا.</div>
+  </div>
+
+  <!-- Phrase 12 -->
+  <div class="translation-block">
+    <div class="trans-fr">12. Elle a lu deux livres utiles.</div>
+    <div class="trans-step"><span class="step-icon">TYPE</span><span class="step-content"><strong>Phrase verbale</strong> : verbe fém. + fa'il + maf'ul duel avec na't</span></div>
+    <div class="trans-step"><span class="step-icon blue">VERBE</span><span class="step-content"><span class="ar-inline">قَرَأَتْ</span> = elle a lu → قَرَأَ + ـَتْ (féminin passé)</span></div>
+    <div class="trans-step"><span class="step-icon green">COD</span><span class="step-content"><span class="ar-inline">كِتَابَيْنِ نَافِعَيْنِ</span> = deux livres utiles → duel نصب → ـَيْنِ pour le nom ET le na't</span></div>
+    <div class="trans-result">قَرَأَتْ كِتَابَيْنِ نَافِعَيْنِ.</div>
+  </div>
+
+  <!-- Phrase 13 -->
+  <div class="translation-block">
+    <div class="trans-fr">13. La mère de Muhammad est ingénieure.</div>
+    <div class="trans-step"><span class="step-icon">TYPE</span><span class="step-content"><strong>Phrase nominale</strong> : sujet idafa + khabar</span></div>
+    <div class="trans-step"><span class="step-icon blue">SUJET</span><span class="step-content"><span class="ar-inline">أُمُّ مُحَمَّدٍ</span> = la mère de Muhammad → أُمّ (رفع ـُّ) + مُحَمَّدٍ (génitif ـٍ)</span></div>
+    <div class="trans-step"><span class="step-icon green">KHABAR</span><span class="step-content"><span class="ar-inline">مُهَنْدِسَةٌ</span> = ingénieure → fém. indéf. رفع ـٌ</span></div>
+    <div class="trans-result">أُمُّ مُحَمَّدٍ مُهَنْدِسَةٌ.</div>
+  </div>
+
+  <!-- Phrase 14 -->
+  <div class="translation-block">
+    <div class="trans-fr">14. Je suis allé(e) à la mosquée ce matin.</div>
+    <div class="trans-step"><span class="step-icon">TYPE</span><span class="step-content"><strong>Phrase verbale</strong> au passé + complément de lieu + temps</span></div>
+    <div class="trans-step"><span class="step-icon blue">VERBE</span><span class="step-content"><span class="ar-inline">ذَهَبْتُ</span> = je suis allé(e) → ذَهَبَ + ـْتُ</span></div>
+    <div class="trans-step"><span class="step-icon green">LIEU</span><span class="step-content"><span class="ar-inline">إِلَى الْمَسْجِدِ</span> = à la mosquée → إِلَى + الْمَسْجِدِ (جرّ ـِ)</span></div>
+    <div class="trans-step"><span class="step-icon gold">TEMPS</span><span class="step-content"><span class="ar-inline">هَذَا الصَّبَاحَ</span> = ce matin → ظرف زمان (نصب ـَ)</span></div>
+    <div class="trans-result">ذَهَبْتُ إِلَى الْمَسْجِدِ هَذَا الصَّبَاحَ.</div>
+  </div>
+
+  <!-- Phrase 15 -->
+  <div class="translation-block">
+    <div class="trans-fr">15. Ces examens sont faciles.</div>
+    <div class="trans-step"><span class="step-icon">TYPE</span><span class="step-content"><strong>Phrase nominale</strong> avec démonstratif (اسم الإشارة)</span></div>
+    <div class="trans-step"><span class="step-icon blue">SUJET</span><span class="step-content"><span class="ar-inline">هَذِهِ الاِخْتِبَارَاتُ</span> = ces examens → هَذِهِ (démonstratif, pl. fém.) + الاِخْتِبَارَاتُ (رفع ـُ)</span></div>
+    <div class="trans-step"><span class="step-icon green">KHABAR</span><span class="step-content"><span class="ar-inline">سَهْلَةٌ</span> = facile (fém. sg. — pl. brisé non-humain traité comme fém. sg.) → رفع ـٌ</span></div>
+    <div class="trans-result">هَذِهِ الاِخْتِبَارَاتُ سَهْلَةٌ.</div>
+  </div>
+
+  <!-- Phrase 16 -->
+  <div class="translation-block">
+    <div class="trans-fr">16. Mon père lit le Coran dans sa chambre.</div>
+    <div class="trans-step"><span class="step-icon">TYPE</span><span class="step-content"><strong>Phrase verbale</strong> au présent + fa'il + COD + lieu</span></div>
+    <div class="trans-step"><span class="step-icon blue">VERBE</span><span class="step-content"><span class="ar-inline">يَقْرَأُ</span> = il lit (هو) → يَـ + قَرَأَ (racine) → présent sg. masc.</span></div>
+    <div class="trans-step"><span class="step-icon green">FA'IL</span><span class="step-content"><span class="ar-inline">أَبِي</span> = mon père → أَب (irrég.) + ـِي (suffixe 1ère pers.) → رفع</span></div>
+    <div class="trans-step"><span class="step-icon gold">COD</span><span class="step-content"><span class="ar-inline">الْقُرْآنَ</span> = le Coran → maf'ul → نصب ـَ</span></div>
+    <div class="trans-step"><span class="step-icon red">LIEU</span><span class="step-content"><span class="ar-inline">فِي غُرْفَتِهِ</span> = dans sa chambre → فِي + غُرْفَةِ (جرّ) + هِ (suffixe "son")</span></div>
+    <div class="trans-result">يَقْرَأُ أَبِي الْقُرْآنَ فِي غُرْفَتِهِ.</div>
+  </div>
+
+  <!-- Phrase 17 -->
+  <div class="translation-block">
+    <div class="trans-fr">17. Les deux élèves sont devant la classe.</div>
+    <div class="trans-step"><span class="step-icon">TYPE</span><span class="step-content"><strong>Phrase nominale</strong> au duel</span></div>
+    <div class="trans-step"><span class="step-icon blue">SUJET</span><span class="step-content"><span class="ar-inline">التِّلْمِيذَانِ</span> = les deux élèves (masc. duel) → mubtada' → <strong>رفع → ـَانِ</strong></span></div>
+    <div class="trans-step"><span class="step-icon green">KHABAR</span><span class="step-content"><span class="ar-inline">أَمَامَ الْفَصْلِ</span> = devant la classe → أَمَامَ + الْفَصْلِ (جرّ ـِ)</span></div>
+    <div class="trans-result">التِّلْمِيذَانِ أَمَامَ الْفَصْلِ.</div>
+  </div>
+
+  <!-- Phrase 18 -->
+  <div class="translation-block">
+    <div class="trans-fr">18. Le gagnant est content.</div>
+    <div class="trans-step"><span class="step-icon">TYPE</span><span class="step-content"><strong>Phrase nominale</strong> simple</span></div>
+    <div class="trans-step"><span class="step-icon blue">SUJET</span><span class="step-content"><span class="ar-inline">الْفَائِزُ</span> = le gagnant → mubtada' → رفع ـُ</span></div>
+    <div class="trans-step"><span class="step-icon green">KHABAR</span><span class="step-content"><span class="ar-inline">مَسْرُورٌ</span> = content → khabar → رفع indéf. ـٌ</span></div>
+    <div class="trans-result">الْفَائِزُ مَسْرُورٌ.</div>
+  </div>
+
+  <!-- Phrase 19 -->
+  <div class="translation-block">
+    <div class="trans-fr">19. Vous (pl. masc.) avez salué le vendeur.</div>
+    <div class="trans-step"><span class="step-icon">TYPE</span><span class="step-content"><strong>Phrase verbale</strong> au passé — sujet dans le verbe</span></div>
+    <div class="trans-step"><span class="step-icon blue">VERBE</span><span class="step-content"><span class="ar-inline">سَلَّمْتُمْ</span> = vous avez salué → سَلَّمَ + ـْتُمْ (أنتم)</span></div>
+    <div class="trans-step"><span class="step-icon green">PRÉP</span><span class="step-content"><span class="ar-inline">عَلَى الْبَائِعِ</span> = sur / au vendeur → عَلَى + الْبَائِعِ (جرّ ـِ) — سَلَّمَ عَلَى = saluer quelqu'un</span></div>
+    <div class="trans-result">سَلَّمْتُمْ عَلَى الْبَائِعِ.</div>
+  </div>
+
+  <!-- Phrase 20 -->
+  <div class="translation-block">
+    <div class="trans-fr">20. L'étudiant diligent a écrit un article dans le cahier.</div>
+    <div class="trans-step"><span class="step-icon">TYPE</span><span class="step-content"><strong>Phrase verbale</strong> — fa'il avec na't + COD + lieu</span></div>
+    <div class="trans-step"><span class="step-icon blue">VERBE</span><span class="step-content"><span class="ar-inline">كَتَبَ</span> = il a écrit → hو implicite → passé sg. masc.</span></div>
+    <div class="trans-step"><span class="step-icon green">FA'IL</span><span class="step-content"><span class="ar-inline">الطَّالِبُ الْمُجْتَهِدُ</span> = l'étudiant diligent → fa'il رفع ـُ + na't (déf. masc. رفع ـُ)</span></div>
+    <div class="trans-step"><span class="step-icon gold">COD</span><span class="step-content"><span class="ar-inline">مَقَالَةً</span> = un article → maf'ul → نصب indéf. ـً</span></div>
+    <div class="trans-step"><span class="step-icon red">LIEU</span><span class="step-content"><span class="ar-inline">فِي الْكُرَّاسَةِ</span> = dans le cahier → فِي + الْكُرَّاسَةِ (جرّ ـِ)</span></div>
+    <div class="trans-result">كَتَبَ الطَّالِبُ الْمُجْتَهِدُ مَقَالَةً فِي الْكُرَّاسَةِ.</div>
+  </div>
+
+</div>
+```
+
+  </div>
+
+  <!-- ================================ SECTION 9 ================================ -->
+
+  <div class="section" id="s9">
+    <div class="section-header">
+      <div class="section-num">9</div>
+      <h2>Texte avec Analyse Grammaticale</h2>
+      <span class="arabic-title">نَصٌّ وَ تَحْلِيلٌ نَحْوِيٌّ</span>
+    </div>
+    <div class="section-body">
+
+```
+  <div class="rule-box blue">
+    <div class="rule-title">📖 Le texte</div>
+    <p style="font-style: italic; font-size: 0.88rem;">Un court texte narratif de niveau Médine 1 :</p>
+  </div>
+
+  <div class="analysis-text">
+    <span class="analysis-word aw-fail">الطَّالِبُ</span> <span class="analysis-word aw-verb">يَذْهَبُ</span> إِلَى <span class="analysis-word aw-jar">الْمَدْرَسَةِ</span> كُلَّ يَوْمٍ. <span class="analysis-word aw-verb">يَقْرَأُ</span> <span class="analysis-word aw-fail">هُوَ</span> <span class="analysis-word aw-mafoul">الدُّرُوسَ</span> وَ <span class="analysis-word aw-verb">يَكْتُبُ</span> <span class="analysis-word aw-mafoul">الْوَاجِبَاتِ</span>. <span class="analysis-word aw-mubtada">الأُسْتَاذُ</span> <span class="analysis-word aw-khabar">كَرِيمٌ</span>. <span class="analysis-word aw-verb">كَتَبَ</span> <span class="analysis-word aw-fail">الأُسْتَاذُ</span> <span class="analysis-word aw-mafoul">دَرْسًا</span> <span class="analysis-word aw-jar">جَدِيدًا</span> عَلَى السَّبُّورَةِ. <span class="analysis-word aw-mubtada">بَيْتُ</span> <span class="analysis-word aw-jar">الطَّالِبِ</span> <span class="analysis-word aw-khabar">قَرِيبٌ</span> مِنَ <span class="analysis-word aw-jar">الْمَدْرَسَةِ</span>.
+  </div>
+
+  <div class="analysis-legend">
+    <div class="legend-item"><div class="legend-dot" style="background:#e74c3c;"></div> Mubtada' (sujet nom.)</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#3498db;"></div> Khabar (prédicat)</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#2ecc71;"></div> Fa'il (agent verbal)</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#f39c12;"></div> Maf'ul (COD)</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#9b59b6;"></div> Majrour (après prép.)</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#1abc9c;"></div> Verbe</div>
+  </div>
+
+  <p style="margin: 14px 0 8px;"><strong>Traduction :</strong> <em>L'étudiant va à l'école chaque jour. Il lit les leçons et écrit les devoirs. Le professeur est généreux. Le professeur a écrit une nouvelle leçon au tableau. La maison de l'étudiant est proche de l'école.</em></p>
+
+  <p style="margin: 16px 0 8px; font-weight: 600;">Analyse mot par mot :</p>
+
+  <div class="analysis-grid">
+
+    <div class="analysis-card">
+      <div class="ac-word" style="color: var(--green);">الطَّالِبُ</div>
+      <div class="ac-label" style="color: var(--green);">Fa'il (agent)</div>
+      <div class="ac-desc">Sujet de يَذْهَبُ</div>
+      <div class="ac-case">Cas : رفع → terminaison ـُ</div>
+    </div>
+
+    <div class="analysis-card">
+      <div class="ac-word" style="color: #1abc9c;">يَذْهَبُ</div>
+      <div class="ac-label" style="color: #1abc9c;">Verbe (فعل مضارع)</div>
+      <div class="ac-desc">Présent, هو, racine ذ-ه-ب</div>
+      <div class="ac-case">Préfixe يَـ + terminaison ـُ</div>
+    </div>
+
+    <div class="analysis-card">
+      <div class="ac-word" style="color: var(--purple);">الْمَدْرَسَةِ</div>
+      <div class="ac-label" style="color: var(--purple);">Majrour (مجرور)</div>
+      <div class="ac-desc">Après la préposition إِلَى</div>
+      <div class="ac-case">Cas : جرّ → terminaison ـِ</div>
+    </div>
+
+    <div class="analysis-card">
+      <div class="ac-word" style="color: #1abc9c;">يَقْرَأُ</div>
+      <div class="ac-label" style="color: #1abc9c;">Verbe (فعل مضارع)</div>
+      <div class="ac-desc">Présent, هو, racine ق-ر-أ</div>
+      <div class="ac-case">Préfixe يَـ + terminaison ـُ</div>
+    </div>
+
+    <div class="analysis-card">
+      <div class="ac-word" style="color: var(--gold);">الدُّرُوسَ</div>
+      <div class="ac-label" style="color: #8a6d00;">Maf'ul bih (COD)</div>
+      <div class="ac-desc">Complément d'objet de يَقْرَأُ</div>
+      <div class="ac-case">Cas : نصب → terminaison ـَ</div>
+    </div>
+
+    <div class="analysis-card">
+      <div class="ac-word" style="color: #e74c3c;">الأُسْتَاذُ</div>
+      <div class="ac-label" style="color: #e74c3c;">Mubtada'</div>
+      <div class="ac-desc">Sujet de la phrase nominale</div>
+      <div class="ac-case">Cas : رفع → terminaison ـُ</div>
+    </div>
+
+    <div class="analysis-card">
+      <div class="ac-word" style="color: var(--blue);">كَرِيمٌ</div>
+      <div class="ac-label" style="color: var(--blue);">Khabar</div>
+      <div class="ac-desc">Prédicat de الأُسْتَاذُ</div>
+      <div class="ac-case">Cas : رفع indéf. → ـٌ (tanwin damm)</div>
+    </div>
+
+    <div class="analysis-card">
+      <div class="ac-word" style="color: #1abc9c;">كَتَبَ</div>
+      <div class="ac-label" style="color: #1abc9c;">Verbe (فعل ماضٍ)</div>
+      <div class="ac-desc">Passé, هو, racine ك-ت-ب</div>
+      <div class="ac-case">Base كَتَبَ, pas de suffixe (هو)</div>
+    </div>
+
+    <div class="analysis-card">
+      <div class="ac-word" style="color: var(--gold);">دَرْسًا</div>
+      <div class="ac-label" style="color: #8a6d00;">Maf'ul bih (COD)</div>
+      <div class="ac-desc">Complément d'objet de كَتَبَ</div>
+      <div class="ac-case">Cas : نصب indéf. → ـً (tanwin fath)</div>
+    </div>
+
+    <div class="analysis-card">
+      <div class="ac-word" style="color: var(--purple);">جَدِيدًا</div>
+      <div class="ac-label" style="color: var(--purple);">Na't (adjectif)</div>
+      <div class="ac-desc">Qualifie دَرْسًا → accord en cas</div>
+      <div class="ac-case">Masc. sg. indéf. نصب → ـً</div>
+    </div>
+
+    <div class="analysis-card">
+      <div class="ac-word" style="color: #e74c3c;">بَيْتُ الطَّالِبِ</div>
+      <div class="ac-label" style="color: #e74c3c;">Mubtada' (Idafa)</div>
+      <div class="ac-desc">Construction génitive : "la maison de l'étudiant"</div>
+      <div class="ac-case">بَيْتُ رفع ـُ (sans tanwin) + الطَّالِبِ جرّ ـِ</div>
+    </div>
+
+    <div class="analysis-card">
+      <div class="ac-word" style="color: var(--blue);">قَرِيبٌ</div>
+      <div class="ac-label" style="color: var(--blue);">Khabar</div>
+      <div class="ac-desc">Prédicat de بَيْتُ الطَّالِبِ</div>
+      <div class="ac-case">Masc. sg. indéf. رفع → ـٌ</div>
+    </div>
+
+  </div>
+
+  <div class="rule-box red">
+    <div class="rule-title">⚠️ Point clé sur l'idafa</div>
+    <p>Dans <span class="ar-inline">بَيْتُ الطَّالِبِ</span> : le mot <span class="ar-inline">بَيْت</span> perd son tanwin (il n'est plus ـٌ mais ـُ) et ne peut pas prendre ال. Il est déterminé <em>par la suite</em> grâce à l'annexion. C'est la règle fondamentale de l'idafa.</p>
+  </div>
+
+</div>
+```
+
+  </div>
+
+  <div class="divider">— ❧ —</div>
+
+  <div style="text-align: center; padding: 20px 0; color: #888; font-size: 0.82rem;">
+    Niveau Médine Tome 1 · Grammaire Arabe Classique · بِالتَّوْفِيقِ إِنْ شَاءَ اللهُ
+  </div>
+
+</div>
+</body>
+</html>
